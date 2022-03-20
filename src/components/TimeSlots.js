@@ -3,11 +3,11 @@ import "../App.css"
 
 const TimeSlots = () => {
   const crmTimeSlots = [
-    { id: "0800", isEnabled: 1, slot: "9:00AM-9:30AM" },
-    { id: "0801", isEnabled: 0, slot: "12:00PM-12:30PM" },
-    { id: "0802", isEnabled: 1, slot: "1:15PM-1:45PM" },
-    { id: "0803", isEnabled: 0, slot: "4:15PM-4:45PM" },
-    { id: "0804", isEnabled: 1, slot: "6:30PM-7:30PM" },
+    { id: "0800", isEnabled: 1, slot: "8:00AM-10:00AM" },
+    { id: "0801", isEnabled: 0, slot: "9:00AM-11:00AM" },
+    { id: "0802", isEnabled: 1, slot: "10:00AM-12:00PM" },
+    { id: "0803", isEnabled: 0, slot: "12:15PM-1:45PM" },
+    { id: "0804", isEnabled: 1, slot: "12:00PM-2:00PM" },
   ]
   const [selectedDate, setSelectedDate] = useState(new Date())
   const [selectedTimeSlot, setSelectedTimeSlot] = useState(null)
