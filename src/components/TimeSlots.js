@@ -47,11 +47,11 @@ const TimeSlots = () => {
           filteredSlots.push(timeSlot)
           setNewDayTimeSlots(filteredSlots)
         }
-        /*else {
+        else {
           if(timeSlot.isEnabled === 1){
             filteredSlots.push(timeSlot)
             setNewDayTimeSlots(filteredSlots)
-          }*/
+          }
       }
       if (ineligibleSlots.length > 0) {
         console.log("Ineligible", ineligibleSlots)
