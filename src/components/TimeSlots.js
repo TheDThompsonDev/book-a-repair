@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import "../App.css"
+import styles from "../styles/TimeSlots.module.css"
 
 const TimeSlots = () => {
   const crmTimeSlots = [
@@ -12,10 +13,6 @@ const TimeSlots = () => {
   const [selectedDate, setSelectedDate] = useState(new Date())
   const [selectedTimeSlot, setSelectedTimeSlot] = useState(null)
   const [newDayTimeSlots, setNewDayTimeSlots] = useState([])
-
-  useEffect(() => {
-    dayTimeSlots()
-  }, [selectedDate])
 
   const dayTimeSlots = () => {
     let date = selectedDate
@@ -58,6 +55,9 @@ const TimeSlots = () => {
       }
     })
   }
+  useEffect(() => {
+    dayTimeSlots()
+  }, [selectedDate])
 
   console.log(newDayTimeSlots)
 
@@ -69,39 +69,41 @@ const TimeSlots = () => {
     console.log("clicked", i++)
   }
   console.log("timeslot ", newDayTimeSlots.slot)
+
   return (
     <div className="App">
-      <div className=" ">
-        <h2 className="flex justify-center">Available Time Slots</h2>
-      </div>
-      <div className="mt-4 flex justify-center items-center flex-col">
-        <input
-          className="border border-black"
-          type="date"
-          onChange={handleSelectDate}
-        />
-      </div>
-      <div className="flex justify-center items-center mt-4">
-        <input
-          className="border border-black"
-          type="email"
-          placeholder="email"
-        />
-      </div>
-      <div>
-        <div className="px-2 flex flex-col justify-center">
-          <div>
-            <div className="flex justify-center items-center flex-col ">
-              {newDayTimeSlots.map((timeSlot) => (
-                <div
-                  className={`mt-2 py-2 border border-gray-500 rounded `}
-                  key={timeSlot.id}
-                >
-                  <button onClick={handleSelectedTimeSlot}>
-                    {timeSlot.slot}
-                  </button>
-                </div>
-              ))}
+      <div className={styles.timeSlotCard}>
+        <h2>Available Time Slots</h2>
+
+        <div className="mt-4">
+          <input
+            className="border border-black"
+            type="date"
+            onChange={handleSelectDate}
+          />
+        </div>
+        <div className="mt-4">
+          <input
+            className="border border-black"
+            type="email"
+            placeholder="email"
+          />
+        </div>
+        <div>
+          <div className="px-2 flex flex-col justify-center">
+            <div>
+              <div className="flex justify-center items-center flex-col ">
+                {newDayTimeSlots.map((timeSlot) => (
+                  <div
+                    className={`mt-2 py-2 border border-gray-500 rounded `}
+                    key={timeSlot.id}
+                  >
+                    <button onClick={handleSelectedTimeSlot}>
+                      {timeSlot.slot}
+                    </button>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

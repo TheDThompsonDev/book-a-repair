@@ -1,0 +1,11 @@
+.timeSlotCard {
+  background-color: #f2f2f2;
+  border: 1px solid #0c0052;
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 40vw;
+  padding: 20px;
+}
